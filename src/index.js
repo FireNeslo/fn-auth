@@ -128,7 +128,7 @@ module.exports = function setup(config={}) {
     context.protocol = config.protocol || protocol
     context.domain = config.domain || request.headers.host
     context.host = `${context.protocol}://${context.domain}`
-    context.path = request.originalUrl.split('?')[0]
+    context.path = (request.originalUrl || request.url || '?').split('?')[0]
 
     if(!actions[action]) return next()
 

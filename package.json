@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "connect": "^3.5.0",
+    "budo": "^9.2.1",
     "maildev": "^0.14.0",
     "body-parser": "^1.15.2",
     "qs-middleware": "^1.0.1"
