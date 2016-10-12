@@ -1,12 +1,12 @@
 {
   "name": "fn-auth",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple auth module.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src --out-dir lib",
-    "debug": "iron-node demo/index.js"
+    "start": "node demo/index.js"
   },
   "keywords": [],
   "author": "",

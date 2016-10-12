@@ -96,11 +96,11 @@ module.exports = function setup(config={}) {
       })
     }),
     template: defaults(config.template, {
-      error: path.join(__dirname, 'templates', 'error.html'),
-      email: path.join(__dirname, 'templates', 'email.html'),
-      login: path.join(__dirname, 'templates', 'login.html'),
-      request: path.join(__dirname, 'templates', 'request.html'),
-      verify: path.join(__dirname, 'templates', 'verify.html')
+      error: path.resolve(__dirname, '../src/templates', 'error.html'),
+      email: path.resolve(__dirname, '../src/templates', 'email.html'),
+      login: path.resolve(__dirname, '../src/templates', 'login.html'),
+      request: path.resolve(__dirname, '../src/templates', 'request.html'),
+      verify: path.resolve(__dirname, '../src/templates', 'verify.html')
     })
   })
 
@@ -156,7 +156,6 @@ module.exports = function setup(config={}) {
       return render(200, [action, Object.assign(context, {data})])
     }
     function error(error) {
-      console.error(error.stack)
       return render(401, ['error', Object.assign(context, {error})])
     }
     Promise.resolve()
