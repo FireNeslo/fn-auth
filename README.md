@@ -11,6 +11,7 @@ Check demo/index.js for usage
 $ npm install FireNeslo/fn-auth --save
 ```
 ## Usage
+#### server:
 ```js
 const express = require('express')
 const body = require('body-parser')
@@ -24,14 +25,24 @@ const app = express()
   .listen(8080)
 
 ```
+#### client:
+```js
+const auth = require('fn-auth/client')
 
-##API
+auth('login').then(data => {
+  console.log(data.token)
+})
+```
 
-## auth(config)
+## API
+
+### Server
+
+#### auth(config)
 
 Author: fireneslo@gmail.com
 
-### Params:
+##### Params:
 
 * **object** *config* - Configure templates translations and settings
 
@@ -74,3 +85,20 @@ export const config = {
   }
 }
 ```
+
+### Client
+
+#### auth(step, root)
+
+Author: fireneslo@gmail.com
+
+##### Params:
+
+* **string** *step* - action you want to perform default 'login'
+* **string** *root* - url to your server endpoint default '/auth'
+
+```js
+auth('login', '/auth').then(data => {
+  console.log(data.token)
+})
+´´´

@@ -47,6 +47,6 @@ function modal(url, data={}, options={}) {
   })
 }
 
-function auth(step, data) {
+function auth(step='login', url='/auth') {
   return modal(`/auth?fn-auth=${step}`)
 }
