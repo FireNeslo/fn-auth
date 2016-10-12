@@ -5,15 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir lib",
     "debug": "iron-node demo/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "body-parser": "^1.15.2",
     "budo": "^9.2.1",
     "maildev": "^0.14.0",
-    "body-parser": "^1.15.2",
     "qs-middleware": "^1.0.1"
   },
   "dependencies": {
