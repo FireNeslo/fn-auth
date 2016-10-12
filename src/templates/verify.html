@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{config.text.verify.title}</title>
+    <link rel="stylesheet" src="{config.stylesheet}" />
+    <style>{config.styles}</style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var xhr = new XMLHttpRequest();
+      var token = "{data.token}"
+      xhr.open("GET", "?fn-auth=token&token="+token, true);
+      xhr.onload = function(e) {
+        localStorage.setItem('fn-auth', token)
+        location.href = '{referer}'
+        window.close()
+      }
+      xhr.send();
+    </script>
+  </body>
+</html>

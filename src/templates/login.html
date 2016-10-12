@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{config.text.login.title}</title>
+    <link rel="stylesheet" src="{stylesheet}" />
+  </head>
+  <body>
+    <form class="form" action="?fn-auth=request" method="post">
+      <img src="{config.logo}" />
+      <input type="hidden" name="referer" value="{referer}" />
+      <div class="form-control">
+        <input type="email" name="email" placeholder="{config.text.login.email}" />
+      </div>
+      <div class="form-control">
+        <input type="submit" value="{config.text.login.login}" />
+      </div>
+      <div class="form-control">
+        <a href="?fn-auth=reset">{config.text.login.reset}</button>
+      </div>
+    </form>
+  </body>
+</html>

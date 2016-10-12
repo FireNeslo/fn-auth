@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{config.text.request.title}</title>
+    <link rel="stylesheet" src="{config.stylesheet}" />
+    <style>{config.styles}</style>
+  </head>
+  <body>
+    <h3>{config.text.request.pending}</h3>
+    <script>
+      window.addEventListener('storage', event => {
+        if(event.key === 'fn-auth') {
+          location.href = '{referer}?status=200&token='+localStorage[event.key];
+        }
+      })
+    </script>
+  </body>
+</html>
