@@ -3,6 +3,7 @@ const crypto = require('crypto')
 const mailer = require('nodemailer')
 const interpolate = require('interpolate')
 const JWT = require('jsonwebtoken')
+const fs = require('fs')
 
 function sendMail(config, mail) {
   if(!config.email) {
@@ -153,9 +154,11 @@ module.exports = function setup(config={}) {
       })
     }
     function success(data) {
+      debugger
       return render(200, [action, Object.assign(context, {data})])
     }
     function error(error) {
+      debugger
       return render(401, ['error', Object.assign(context, {error})])
     }
     Promise.resolve()
